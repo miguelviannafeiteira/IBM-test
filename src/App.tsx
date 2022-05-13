@@ -23,7 +23,7 @@ function App () {
   return (
       <div>
         {spells?.map((item) => (
-          <p key={item.id}>{item.name}</p>
+          <p key={item.id}>a{item.name}</p>
         ))}
       </div>
   )

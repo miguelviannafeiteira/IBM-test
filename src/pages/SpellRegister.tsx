@@ -1,15 +1,25 @@
 import React, { FormEvent, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { api } from '../services/api'
 
 const SpellRegister = () => {
   const [spellName, setSpellName] = useState('')
-  const [type, setType] = useState('')
+  const [spellType, setSpellType] = useState('')
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
-    console.log(spellName)
-    console.log(type)
+
+    api.post('spells', {
+      name: spellName,
+      type: spellType
+    })
+    setSpellName('')
+    setSpellType('')
   }
 
   return (
+    <>
+    <Link to={'/spells'}>Voltar</Link>
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="spellName">Spell Name</label>
@@ -17,10 +27,11 @@ const SpellRegister = () => {
       </div>
       <div>
         <label htmlFor="type">Type</label>
-        <input type="text" id="type" value={type} onChange={(event) => setType(event.target.value)} />
+        <input type="text" id="type" value={spellType} onChange={(event) => setSpellType(event.target.value)} />
       </div>
     <button type='submit'>Submit</button>
     </form>
+    </>
   )
 }
 

@@ -11,7 +11,7 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Login />} ></Route>
         <Route path="/spells" element={<SpellList />} ></Route>
-        <Route path="/spells/:id" element={<SpellDetail />} ></Route>
+        <Route path="/spells/findById" element={<SpellDetail />} ></Route>
         <Route path="/spells/register" element={<SpellRegister />} ></Route>
       </Routes>
     </BrowserRouter>

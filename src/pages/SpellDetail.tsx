@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
 import { SpellType } from '../model/SpellModel'
 import { api } from '../services/api'
-import { IoTrashBin } from 'react-icons/io5'
+import { SpellContext } from '../context/SpellContext'
+import { Link } from 'react-router-dom'
 
 const SpellDetail = () => {
-  const { id } = useParams()
-  const [spell, setSpell] = useState<SpellType[]>()
+  const [spell, setSpell] = useState<SpellType>()
+  const { contextId } = useContext(SpellContext)
 
   useEffect(() => {
-    api.get(`/spells/${id}`).then(({ data }) => {
-      setSpell(data.spells)
+    api.post('/spells/findById', {
+      id: contextId
+    }).then(({ data }) => {
+      setSpell(data)
     })
   }, [])
 
   return (
     <div>
+      <Link to={'/spells'}>Voltar</Link>
       <ul>
-        {spell?.map((item) => (
-          <li key={item.id}>{item.name}, {item.type}, Create at {item.createdAt.substring(0, 10)}, {item.id}
-          <IoTrashBin/>
+          <li>{spell?.name}, {spell?.type}, Create at {spell?.createdAt.substring(0, 10)}
           </li>
-        ))}
       </ul>
     </div>
   )

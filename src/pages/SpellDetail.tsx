@@ -14,16 +14,12 @@ const SpellDetail = () => {
     })
   }, [])
 
-  const deleteSpell = () => {
-    api.delete(`/spells/${id}`)
-  }
-
   return (
     <div>
       <ul>
         {spell?.map((item) => (
           <li key={item.id}>{item.name}, {item.type}, Create at {item.createdAt.substring(0, 10)}, {item.id}
-          <IoTrashBin onClick={deleteSpell}/>
+          <IoTrashBin/>
           </li>
         ))}
       </ul>

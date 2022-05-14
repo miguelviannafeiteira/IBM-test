@@ -28,7 +28,7 @@ export const SpellList = () => {
           />
         ))}
        </ul>
-      <Link to="/spells/register">Adicionar nova Magia</Link>
+      <Link to="/spells/spellRegister">Adicionar nova Magia</Link>
   </div>
   )
 }

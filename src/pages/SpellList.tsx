@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Spell from '../components/Spell'
 import { SpellType } from '../model/SpellModel'
 import { api } from '../services/api'
@@ -16,7 +17,7 @@ export const SpellList = () => {
   return (
     <div>
       <ul>
-        {spells?.map((spell) => (
+        {spells.map((spell) => (
           <Spell
           key={spell.id}
           id={spell.id}
@@ -27,6 +28,7 @@ export const SpellList = () => {
           />
         ))}
       </ul>
+      <Link to="/spells/register">Adicionar nova Magia</Link>
   </div>
   )
 }

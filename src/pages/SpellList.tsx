@@ -5,19 +5,19 @@ import { SpellType } from '../model/SpellModel'
 import { api } from '../services/api'
 
 export const SpellList = () => {
-  const [spells, setSpeels] = useState<SpellType[]>([])
+  const [spells, setSpells] = useState<SpellType[]>([])
 
   useEffect(() => {
     api.get('/spells').then(({ data }) => {
       const spellsInAlphabeticalOrder:SpellType[] = data.spells.sort((a:SpellType, b:SpellType) => a.name.localeCompare(b.name))
-      setSpeels(spellsInAlphabeticalOrder)
+      setSpells(spellsInAlphabeticalOrder)
     })
   }, [])
 
   return (
     <div>
       <ul>
-        {spells.map((spell) => (
+        {spells?.map((spell) => (
           <Spell
           key={spell.id}
           id={spell.id}
@@ -27,7 +27,7 @@ export const SpellList = () => {
           version={spell.version}
           />
         ))}
-      </ul>
+       </ul>
       <Link to="/spells/register">Adicionar nova Magia</Link>
   </div>
   )

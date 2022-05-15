@@ -16,7 +16,7 @@ export const SpellList = () => {
       const spellsInAlphabeticalOrder:SpellType[] = data?.spells.sort((a:SpellType, b:SpellType) => a.name.localeCompare(b.name))
       setSpells(spellsInAlphabeticalOrder)
     }
-  }, [data])
+  }, [data, navigate])
 
   if (!data) return <p>Carregando as magias...</p>
 

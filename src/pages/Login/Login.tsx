@@ -12,7 +12,7 @@ export const Login = () => {
     if (localStorage.getItem('username')) {
       navigate('/spells')
     }
-  }, [])
+  }, [navigate])
 
   function saveOnLocalStorage (event: FormEvent) {
     event.preventDefault()
@@ -49,7 +49,7 @@ export const Login = () => {
           </FormMain>
 
           <Footer>
-            <button type='submit'>Registrar-se</button>
+            <button className='button' type='submit'>Registrar-se</button>
           </Footer>
 
         </FormContainer>

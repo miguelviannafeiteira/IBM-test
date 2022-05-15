@@ -64,7 +64,7 @@ export const FormModal = () => {
 
           </FormMain>
           <Footer>
-            <button type="submit">
+            <button className='button' type="submit">
               <CheckIcon />
             </button>
           </Footer>

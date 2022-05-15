@@ -14,7 +14,7 @@ const SpellRegister = () => {
     if (!localStorage.getItem('username')) {
       navigate('/')
     }
-  }, [])
+  }, [navigate])
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
@@ -37,7 +37,7 @@ const SpellRegister = () => {
 
 <Container>
   <Div>
-    <Link className='back' to={'/spells'}>Voltar</Link>
+    <Link className='button' to={'/spells'}>Voltar</Link>
     <Header>
       <strong>Adicione uma magia</strong>
     </Header>
@@ -58,7 +58,7 @@ const SpellRegister = () => {
       </FormMain>
 
       <Footer>
-      <button type='submit'>Adicionar</button>
+      <button className='button' type='submit'>Adicionar</button>
       </Footer>
 
     </FormContainer>

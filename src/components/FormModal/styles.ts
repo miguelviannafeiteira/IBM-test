@@ -50,10 +50,6 @@ export const FormContainer = styled.form`
   flex-direction:column;
   justify-content:space-between;
   gap:15px;
-  .error {
-    text-align:center;
-    color: #D60000;
-  }
 
 `
 export const FormMain = styled.main`
@@ -84,18 +80,7 @@ export const Footer = styled.footer`
   display:flex;
   justify-content:center;
   button{
-    align-self:center;
-    background:#b4ecb4;
-    border:none;
-    border-radius:6px;
-    width:150px;
-    height:35px;
-    font-weight:700;
-    cursor: pointer;
-    transition: opacity .2s;
-    &:hover{
-      opacity:.5;
-    }
+  width:150px;
   }
 `
 export const CheckIcon = styled(IoCheckmark)`

@@ -17,4 +17,30 @@ export default createGlobalStyle`
   ul, li {
     list-style: none;
   }
+  .button{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#b4ecb4;
+    color:#1e1e1e;
+    border:none;
+    border-radius:6px;
+    width:100px;
+    height:35px;
+    font-weight:700;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: opacity .2s;
+    &:hover{
+      opacity:.5;
+    }
+  }  
+  .error {
+    text-align:center;
+    color: #D60000;
+  }
+  .sucess {
+    text-align:center;
+    color: #49AE45;
+  }
 `

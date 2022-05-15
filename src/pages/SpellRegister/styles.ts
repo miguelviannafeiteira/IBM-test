@@ -24,25 +24,6 @@ export const Div = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-
-  .back{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#b4ecb4;
-    color:#1e1e1e;
-    border:none;
-    border-radius:6px;
-    width:100px;
-    height:35px;
-    font-weight:700;
-    margin-bottom: 30px;
-    cursor: pointer;
-    transition: opacity .2s;
-    &:hover{
-      opacity:.5;
-    }
-  }
 `
 
 export const Header = styled.header`
@@ -68,14 +49,6 @@ export const FormContainer = styled.form`
   flex-direction:column;
   justify-content:space-between;
   gap:15px;
-  .error {
-    text-align:center;
-    color: #D60000;
-  }
-  .sucess {
-    text-align:center;
-    color: #49AE45;
-  }
 `
 export const FormMain = styled.main`
 margin-top:10px;
@@ -105,18 +78,7 @@ export const InputGroup = styled.div`
 export const Footer = styled.footer`
   display:flex;
   justify-content:center;
-  button{
-    align-self:center;
-    background:#b4ecb4;
-    border:none;
-    border-radius:6px;
-    width:150px;
-    height:35px;
-    font-weight:700;
-    cursor: pointer;
-    transition: opacity .2s;
-    &:hover{
-      opacity:.5;
-    }
-  }
+button {
+  width:150px;
+}
 `

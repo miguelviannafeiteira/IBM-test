@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import Spell from '../components/Spell'
+import { Link, useNavigate } from 'react-router-dom'
+import Spell from '../components/Spell/Spell'
+import { SwrHook } from '../hook/SwrHook'
 import { SpellType } from '../model/SpellModel'
-import { api } from '../services/api'
 
 export const SpellList = () => {
-  const [spells, setSpells] = useState<SpellType[]>([])
+  const { data } = SwrHook('/spells')
+  const [spells, setSpells] = useState<SpellType[]>()
+  const navigate = useNavigate()
 
   useEffect(() => {
-    api.get('/spells').then(({ data }) => {
-      const spellsInAlphabeticalOrder:SpellType[] = data.spells.sort((a:SpellType, b:SpellType) => a.name.localeCompare(b.name))
+    if (!localStorage.getItem('username')) {
+      navigate('/')
+    } else {
+      const spellsInAlphabeticalOrder:SpellType[] = data?.spells.sort((a:SpellType, b:SpellType) => a.name.localeCompare(b.name))
       setSpells(spellsInAlphabeticalOrder)
-    })
-  }, [])
+    }
+  }, [data])
+
+  if (!data) return <p>Carregando as magias...</p>
 
   return (
     <div>
@@ -28,7 +34,7 @@ export const SpellList = () => {
           />
         ))}
        </ul>
-      <Link to="/spells/spellRegister">Adicionar nova Magia</Link>
+      <Link to="/spells/spellRegister">Adicionar uma nova Magia</Link>
   </div>
   )
 }

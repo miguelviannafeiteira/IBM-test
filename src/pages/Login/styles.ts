@@ -1,7 +1,6 @@
 import styled from 'styled-components'
-import { IoClose, IoCheckmark } from 'react-icons/io5'
 
-export const Overlay = styled.div`
+export const Container = styled.div`
   background:rgba(244,243,245, .6);
   position:fixed;
   top:0;
@@ -13,7 +12,7 @@ export const Overlay = styled.div`
   align-items:center;
 `
 
-export const Container = styled.div`
+export const Div = styled.div`
   background:#fff;
   width:100%;
   height:100%;
@@ -54,7 +53,6 @@ export const FormContainer = styled.form`
     text-align:center;
     color: #D60000;
   }
-
 `
 export const FormMain = styled.main`
   margin:auto 0;
@@ -97,13 +95,4 @@ export const Footer = styled.footer`
       opacity:.5;
     }
   }
-`
-export const CheckIcon = styled(IoCheckmark)`
-color:white;
-width:2.4em;
-height:2.4em;
-`
-export const CloseIcon = styled(IoClose)`
-height:25px;
-width:25px;
 `

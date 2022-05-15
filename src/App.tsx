@@ -1,11 +1,13 @@
 import React from 'react'
 import { AppRoutes } from './AppRoutes'
 import { SpellContextProvider } from './context/SpellContext'
+import GlobalStyles from './styles/GlobalStyles'
 
 function App () {
   return (
     <SpellContextProvider>
-    <AppRoutes />
+      <GlobalStyles />
+      <AppRoutes />
     </SpellContextProvider>
   )
 }

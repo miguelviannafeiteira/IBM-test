@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { SpellType } from '../model/SpellModel'
-import { api } from '../services/api'
-import { SpellContext } from '../context/SpellContext'
+import { SpellType } from '../../model/SpellModel'
+import { api } from '../../services/api'
+import { SpellContext } from '../../context/SpellContext'
 import { Link, useNavigate } from 'react-router-dom'
 
 const SpellDetail = () => {

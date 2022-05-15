@@ -14,7 +14,7 @@ export const FormModal = () => {
     event.preventDefault()
 
     if (!name || !type) {
-      setModalError('Name and type are required')
+      setModalError('Preencha o nome e o tipo da magia')
     } else {
       api.put('/spells', {
         id: contextId,
@@ -49,7 +49,7 @@ export const FormModal = () => {
           </button>
         </Header>
         <FormContainer onSubmit={handleSubmit}>
-          <FormMain >
+          <FormMain>
 
             <InputGroup>
               <label htmlFor="name">Nome</label>
@@ -59,8 +59,8 @@ export const FormModal = () => {
             <InputGroup>
               <label htmlFor="type">Tipo</label>
               <input id="type" type="text" value={type} onChange={(event) => setType(event.target.value)}/>
+            <p className='error'>{modalError}</p>
             </InputGroup>
-            <p>{modalError}</p>
 
           </FormMain>
           <Footer>

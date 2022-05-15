@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Spell from '../components/Spell/Spell'
-import { SwrHook } from '../hook/SwrHook'
-import { SpellType } from '../model/SpellModel'
+import Spell from '../../components/Spell/Spell'
+import { SwrHook } from '../../hook/SwrHook'
+import { SpellType } from '../../model/SpellModel'
 
 export const SpellList = () => {
   const { data } = SwrHook('/spells')

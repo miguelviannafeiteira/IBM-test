@@ -14,7 +14,7 @@ const SpellRegister = () => {
     if (!localStorage.getItem('username')) {
       navigate('/')
     }
-  })
+  }, [])
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
@@ -34,18 +34,6 @@ const SpellRegister = () => {
   }
 
   return (
-    <>
-    {/* <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="spellName">Nome da magia</label>
-        <input type="text" id="spellName" value={spellName} onChange={(event) => setSpellName(event.target.value)} />
-      </div>
-      <div>
-        <label htmlFor="type">Tipo da magia</label>
-        <input type="text" id="type" value={spellType} onChange={(event) => setSpellType(event.target.value)} />
-      </div>
-    <button type='submit'>Adicionar</button>
-    </form> */}
 
 <Container>
   <Div>
@@ -77,7 +65,6 @@ const SpellRegister = () => {
 
   </Div>
 </Container>
-</>
 
   )
 }

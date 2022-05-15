@@ -36,7 +36,7 @@ const SpellDetail = () => {
     <div>
       <Link to={'/spells'}>Voltar</Link>
       <ul>
-          <li>{spell?.name}, {spell?.type}, Criada em {spell?.createdAt.substring(0, 10)}
+          <li>{spell.name}, {spell.type}, Criada em {spell.createdAt.substring(0, 10)}
           </li>
       </ul>
     </div>

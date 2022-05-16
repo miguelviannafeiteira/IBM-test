@@ -38,10 +38,9 @@ border-radius:5px;
 
 @media (max-width: 520px) {
   flex-direction:column;
-  justify-content:center;
+  justify-content:space-evenly;
   width:300px;
   height:120px;
-  gap:15px;
 }
 
 .button {

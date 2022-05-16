@@ -28,6 +28,7 @@ const Spell = ({ name, id, type, createdAt, version }:SpellType) => {
     setName(spellName)
     setType(spellType)
     setVersion(spellVersion)
+
     setIsOpenModal(true)
   }
 

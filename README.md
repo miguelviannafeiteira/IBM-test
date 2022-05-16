@@ -11,12 +11,14 @@
   <h1 align="center">Tecnologias utilizadas</h1>
   <ul>
     <li>JavaScript</li>  
+    <li>Typescript</li>  
     <li>React.js</li> 
     <ul>
       <li>Axios</li>
       <li>React Icons</li>
       <li>SWR</li>
       <li>Styled Components</li>
+      <li>React Router Dom</li>
     </ul>
  </div>
 

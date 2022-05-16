@@ -42,7 +42,7 @@ export const Login = () => {
             <InputGroup>
               <label htmlFor="password">Senha</label>
               <input type="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
-          <p className='error'>{loginError}</p>
+              <p className='error'>{loginError}</p>
 
             </InputGroup>
 

@@ -10,7 +10,7 @@ export const FormModal = () => {
   const { data, mutate } = SwrHook('/spells')
   const [modalError, setModalError] = useState('')
 
-  const handleSubmit = (event: FormEvent) => {
+  const editSpell = (event: FormEvent) => {
     event.preventDefault()
 
     if (!name || !type) {
@@ -48,7 +48,7 @@ export const FormModal = () => {
             <CloseIcon/>
           </button>
         </Header>
-        <FormContainer onSubmit={handleSubmit}>
+        <FormContainer onSubmit={editSpell}>
           <FormMain>
 
             <InputGroup>

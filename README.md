@@ -4,7 +4,7 @@
    <img src="./layout/lista.png" width=450> 
    <img src="./layout/magia.png" width=450>
    <img src="./layout/adicionar.png" width=450>
-   <img src="./layout/edit.png" width=450>
+   <img src="./layout/editar.png" width=450>
 </div>
 
 <div>

@@ -4,6 +4,8 @@ import { SpellContext } from '../../context/SpellContext'
 import { SwrHook } from '../../hook/SwrHook'
 import { SpellType } from '../../model/SpellModel'
 import { api } from '../../services/api'
+import { IoCloseOutline, IoPencil } from 'react-icons/io5'
+import { Button, List } from './styles'
 
 const Spell = ({ name, id, type, createdAt, version }:SpellType) => {
   const { setContextId, setIsOpenModal, setName, setType, setVersion } = useContext(SpellContext)
@@ -30,14 +32,19 @@ const Spell = ({ name, id, type, createdAt, version }:SpellType) => {
   }
 
   return (
-      <li>
-       <Link to={'/spells/findById'} onClick={() => setContextId(id)
-       }>
-        {name} | {type}
+    <li>
+      <List>
+        <Button onClick={() => deleteSpell(id)}>
+          <IoCloseOutline/>
+        </Button>
+        <Button onClick={() => editSpell(id, name, type, version)}>
+          <IoPencil/>
+        </Button>
+        <Link className='link' to={'/spells/findById'} onClick={() => setContextId(id)}>
+        {name}
         </Link>
-        <button onClick={() => deleteSpell(id)}>X</button>
-        <button onClick={() => editSpell(id, name, type, version)}>Editar Magia</button>
-      </li>
+      </List>
+    </li>
   )
 }
 

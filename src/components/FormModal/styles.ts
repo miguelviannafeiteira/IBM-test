@@ -25,10 +25,15 @@ export const Container = styled.div`
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  .button {
+    margin-bottom:0;
+    height:35px;
+  }
 `
 
 export const Header = styled.header`
-  display:flex;justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
   width:100%;
   height:40px;
@@ -53,7 +58,7 @@ export const FormContainer = styled.form`
 
 `
 export const FormMain = styled.main`
-  margin:auto 0;
+  margin-top:40px;
   display:flex;
   flex-direction:column;
   gap:20px;

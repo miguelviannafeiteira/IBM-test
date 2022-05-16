@@ -3,7 +3,7 @@ import { SpellType } from '../../model/SpellModel'
 import { api } from '../../services/api'
 import { SpellContext } from '../../context/SpellContext'
 import { Link, useNavigate } from 'react-router-dom'
-import { Container, Div, Main } from './styles'
+import { ContainerModal, Div, Main } from './styles'
 
 const SpellDetail = () => {
   const [spell, setSpell] = useState<SpellType>()
@@ -19,31 +19,42 @@ const SpellDetail = () => {
         id: contextId
       }).then(({ data }) => {
         setSpell(data)
-      }).catch(() => setError('Houve algum problema, volte para a página anterior')
+      }).catch(() => setError('Houve algum problema, volte para a página anterior.')
       )
     }
   }, [])
 
   if (error) {
-    return (<>
-      <Link to={'/spells'}>Voltar</Link>
-       <p>{error}</p>
-  </>
+    return (
+    <ContainerModal>
+      <Main>
+        <Link className='button' to={'/spells'}>Voltar</Link>
+        <p>{error}</p>
+      </Main>
+    </ContainerModal>
     )
   }
-  if (!spell) return <p>Carregando a magia...</p>
+  if (!spell) {
+    return (
+    <ContainerModal>
+      <Main>
+        <p>Carregando a magia...</p>
+      </Main>
+    </ContainerModal>
+    )
+  }
 
   return (
-    <Container>
+    <ContainerModal>
       <Main>
-        <Link className='back' to={'/spells'}>Voltar</Link>
+        <Link className='button' to={'/spells'}>Voltar</Link>
         <Div>
           <strong>Magia: {spell.name}</strong>
           <strong>Tipo: {spell.type}</strong>
           <strong>Criada em: {spell.createdAt.substring(0, 10)}</strong>
         </Div>
       </Main>
-    </Container>
+    </ContainerModal>
   )
 }
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
+export const ContainerModal = styled.section`
   background:rgba(244,243,245, .6);
   position:fixed;
   top:0;
@@ -16,8 +16,8 @@ export const Main = styled.main`
   background:#fff;
   width:100%;
   height:100%;
-  max-width:270px;
-  max-height:250px;
+  max-width:400px;
+  max-height:280px;
   padding:32px 48px;
   box-shadow: 0 0 60px rgba(0,0,0,.08);
   border-radius:20px;
@@ -30,4 +30,18 @@ export const Main = styled.main`
 export const Div = styled.div`
  display:grid;
  gap:30px;
+ strong {
+  overflow-x:auto;
+  white-space:nowrap;
+  ::-webkit-scrollbar {
+  width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #b4ecb4;
+    border-radius: 10px;
+  }
+}
 `

@@ -37,7 +37,7 @@ const SpellRegister = () => {
 
 <Container>
   <Div>
-    <Link className='button' to={'/spells'}>Voltar</Link>
+    <Link className='button a' to={'/spells'}>Voltar</Link>
     <Header>
       <strong>Adicione uma magia</strong>
     </Header>

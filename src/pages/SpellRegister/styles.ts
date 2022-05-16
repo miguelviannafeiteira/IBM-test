@@ -27,7 +27,8 @@ export const Div = styled.div`
 `
 
 export const Header = styled.header`
-  display:flex;justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
   width:100;
   height:40px;
@@ -35,12 +36,7 @@ export const Header = styled.header`
   background-color:transparent;
   padding:0;
   font-size:18px;
-  button{
-    max-height:25px;
-    background:none;
-    border:none;
-    cursor:pointer;
-  }
+  margin: 20px 0 10px 0;
 `
 export const FormContainer = styled.form`
   height:100%;
@@ -51,7 +47,7 @@ export const FormContainer = styled.form`
   gap:15px;
 `
 export const FormMain = styled.main`
-margin-top:10px;
+  margin-top:10px;
   display:flex;
   flex-direction:column;
   gap:10px;

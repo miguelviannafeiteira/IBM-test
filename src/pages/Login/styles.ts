@@ -51,7 +51,7 @@ export const FormContainer = styled.form`
   gap:15px;
 `
 export const FormMain = styled.main`
-  margin:auto 0;
+  margin-top: 40px;
   display:flex;
   flex-direction:column;
   gap:20px;

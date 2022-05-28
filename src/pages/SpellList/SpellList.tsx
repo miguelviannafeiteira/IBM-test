@@ -7,7 +7,7 @@ import { Main, ContainerModal } from '../SpellDetail/styles'
 import { Container, Header, List } from './styles'
 
 export const SpellList = () => {
-  const { data } = SwrHook('/spells')
+  const { data, error } = SwrHook('/spells')
   const [spells, setSpells] = useState<SpellType[]>()
   const navigate = useNavigate()
 
@@ -19,6 +19,15 @@ export const SpellList = () => {
       setSpells(spellsInAlphabeticalOrder)
     }
   }, [data, navigate])
+
+  if (error) {
+    return (
+    <ContainerModal>
+      <Main>
+        <p>Algo deu errado, desculpe pelo transtorno. </p>
+      </Main>
+    </ContainerModal>)
+  }
 
   if (!data) {
     return (
